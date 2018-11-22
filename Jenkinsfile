@@ -1,17 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('init') {
-      steps {
-        sh 'cd blockchain'
-      }
-    }
     stage('get status') {
       steps {
         timeout(time: 3, unit: 'MINUTES') {
           waitUntil() {
             script {
-              return getBitmarkMode("localhost:2131")
+              def mode = sh 'curl -k https://localhost:2131/bitmarkd/details | jq -r .mode'
+              return mode ==~ "Normal"
             }
 
           }
