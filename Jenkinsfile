@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('get status') {
       steps {
-        git(url: 'https://github.com/bitmark-inc/automation', branch: 'master')
+        git(url: 'git@github.com:bitmark-inc/automation.git', branch: 'master')
       }
     }
   }
