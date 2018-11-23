@@ -4,6 +4,7 @@ pipeline {
     stage('get status') {
       steps {
         echo '"${WORKSPACE}"'
+        dir(path: 'blockchain')
       }
     }
   }
