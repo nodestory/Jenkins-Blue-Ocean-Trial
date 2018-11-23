@@ -8,4 +8,7 @@ pipeline {
       }
     }
   }
+  environment {
+    test = 'test'
+  }
 }
