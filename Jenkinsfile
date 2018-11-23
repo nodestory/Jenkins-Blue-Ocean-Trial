@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo '"${WORKSPACE}"'
         dir(path: 'blockchain')
+        ws(dir: 'blockchain')
       }
     }
   }
