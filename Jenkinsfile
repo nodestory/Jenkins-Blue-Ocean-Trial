@@ -6,6 +6,7 @@ pipeline {
         echo '"${WORKSPACE}"'
         dir(path: 'blockchain')
         ws(dir: 'blockchain')
+        sleep(unit: 'MINUTES', time: 1)
       }
     }
   }
